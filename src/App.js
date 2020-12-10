@@ -1,7 +1,10 @@
+import Scene from './components/webgl';
+
 function App() {
+
   return (
     <div className="App">
-      Syrim chest
+      <Scene />
     </div>
   );
 }
