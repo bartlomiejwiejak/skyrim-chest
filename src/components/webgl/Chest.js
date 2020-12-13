@@ -25,7 +25,13 @@ function Chest() {
     {isOpen && <HTML fullscreen>
       <ChestModal />
     </HTML>}
-    <mesh scale={[0.01, 0.01, 0.01]} position={[2, -3, -9.8]} rotation={[.1, 1.1, .1]} onClick={() => setIsOpen(false)} >
+    <mesh scale={[0.01, 0.01, 0.01]} position={[2, -3, -9.8]} rotation={[.1, 1.1, .1]} onClick={() => setIsOpen(false)} onPointerOver={() => {
+      document.body.style.cursor = 'pointer';
+    }}
+      onPointerOut={() => {
+        document.body.style.cursor = 'auto';
+      }}
+    >
       <primitive object={gltf.scene} dispose={null} />
     </mesh>
   </>

@@ -1,5 +1,5 @@
 .loader {
-  background-color: darkblue;
+  background-color: #222;
   position: fixed;
   left: 0;
   top: 0;
@@ -10,9 +10,9 @@
   align-items: center;
   z-index: 2;
   .progress {
-   border: 1px solid goldenrod;
+   border: 1px solid gold;
    border-radius: 50%;
-   color: goldenrod;
+   color: gold;
    width: 125px;
    height: 125px;
    font-size: 30px;
