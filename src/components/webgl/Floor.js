@@ -1,14 +1,12 @@
 import React from "react";
+import { useGLTF } from 'drei';
 
 const Floor = () => {
-  return (
-    <>
-      <mesh rotation={[-Math.PI / 2, 0, 0]} position={[0, -30.001, 0]} receiveShadow>
-        <planeBufferGeometry attach='geometry' args={[100, 100]} />
-        <shadowMaterial attach='material' opacity={0.4} />
-      </mesh>
-    </>
-  );
+  const gltf = useGLTF('/scene/scene.gltf');
+
+  return <mesh>
+    <primitive object={gltf.scene} dispose={null} />
+  </mesh>
 };
 
 export default Floor;
