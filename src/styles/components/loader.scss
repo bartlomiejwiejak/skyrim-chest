@@ -1,0 +1,23 @@
+.loader {
+  background-color: darkblue;
+  position: fixed;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 2;
+  .progress {
+   border: 1px solid goldenrod;
+   border-radius: 50%;
+   color: goldenrod;
+   width: 125px;
+   height: 125px;
+   font-size: 30px;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+  }
+}
