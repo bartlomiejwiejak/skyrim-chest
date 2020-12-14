@@ -27,7 +27,7 @@
     border-left: 2px solid white;
     border-right: 2px solid white;
     position: relative;
-    padding: 20px;
+    padding: 2rem;
     box-sizing: border-box;
     display: flex;
     flex-direction: column;
@@ -37,13 +37,13 @@
       font-weight: bold;
     }
     h1 {
-      padding-bottom: 50px;
-      font-size: 30px;
+      padding-bottom: 5rem;
+      font-size: 3rem;
       border-bottom: 2px solid #ccc;
     }
     div {
       color: #ccc;
-      font-size: 22px;
+      font-size: 2.2rem;
     }
     .background {
       opacity: 0.8;
@@ -75,5 +75,20 @@
     background-color: black;
     border-top: 2px solid white;
     opacity: 0.8;
+    padding: 1.5rem 3rem 5rem;
+    .info {
+      display: flex;
+      .icon {
+        padding: 0.2rem 0.5rem;
+        background-color: black;
+        border: 1px solid white;
+        border-radius: 10%;
+        font-size: 1.6rem;
+      }
+      .text {
+        margin-left: 0.5rem;
+        font-size: 2.2rem;
+      }
+    }
   }
 }

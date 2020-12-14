@@ -40,7 +40,14 @@ function ChestModal({ isOpen }) {
           <div className="background"></div>
         </div>
       </div>
-      <div className="status"></div>
+      <div className="status">
+        <div className='info'>
+          <div className="icon">Esc</div>
+          <div className="text">Close</div>
+        </div>
+        <div className="info">
+        </div>
+      </div>
     </div>
   )
 }
