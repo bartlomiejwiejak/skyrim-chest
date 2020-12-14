@@ -21,7 +21,7 @@ function UseCameraMove() {
       })
     }
     gsap.to(camera.position, 2.5, {
-      ...cameraEndValues, onComplete: () => {
+      ...cameraEndValues, ease: 'power3.out', onComplete: () => {
         window.addEventListener('mousemove', handleMovingCameraViaMouse)
       }
     })
