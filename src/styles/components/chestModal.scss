@@ -7,6 +7,7 @@
   z-index: 2;
   opacity: 0;
   color: white;
+  display: flex;
   .overlay {
     position: absolute;
     left: 0;
@@ -44,6 +45,11 @@
     div {
       color: #ccc;
       font-size: 2.2rem;
+      transition: .3s;
+      &:not(:first-child):hover {
+        color: white;
+        cursor: pointer;
+      }
     }
     .background {
       opacity: 0.8;
@@ -65,6 +71,15 @@
     .background {
       background-color: black;
     }
+    .items {
+      div {
+        cursor: pointer;
+        transition: .3s;
+        &:hover {
+          color: white;
+        }
+      }
+    }
   }
   .status {
     position: absolute;
@@ -76,8 +91,10 @@
     border-top: 2px solid white;
     opacity: 0.8;
     padding: 1.5rem 3rem 5rem;
+    display: flex;
     .info {
       display: flex;
+      margin-left: 1.5rem;
       .icon {
         padding: 0.2rem 0.5rem;
         background-color: black;
@@ -88,6 +105,68 @@
       .text {
         margin-left: 0.5rem;
         font-size: 2.2rem;
+      }
+    }
+  }
+  .item-info {
+    position: relative;
+    width: 30%;
+    margin: 0 auto;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    .wrapper {
+      img {
+        width: 70%;
+        display: block;
+        margin: 0 auto 5rem;
+      }
+      .about {
+        position: relative;
+        padding: 5rem;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        div {
+          position: relative;
+        }
+        .background {
+          position: absolute;
+          left: 0;
+          top: 0;
+          bottom: 0;
+          right: 0;
+          opacity: 0.4;
+          background-color: black;
+          border: 2px solid white;
+        }
+        > div {
+          font-size: 2rem;
+          color: grey;
+          display: flex;
+          span {
+            font-size: 3rem;
+            color: white;
+            display: block;
+            margin-left: .5rem;
+            font-weight: bold;
+          }
+        }
+        .name {
+          font-size: 3rem;
+          text-transform: uppercase;
+          border-bottom: 2px solid grey;
+          grid-column: 1/-1;
+          color: white;
+          font-weight: bold;
+          display: flex;
+          justify-content: center;
+          margin-bottom: 1rem;
+        }
+      }
+      .description {
+        grid-column: 1/-1;
+        display: flex;
+        justify-content: center;
       }
     }
   }

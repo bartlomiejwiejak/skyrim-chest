@@ -1,9 +1,52 @@
 import React, { useState, useEffect } from 'react'
 import gsap from 'gsap';
 
+import ItemInfo from './ItemInfo';
+import ironHelmet from '../../assets/images/Iron_Helmet.png';
+import steelSword from '../../assets/images/steel-sword.png';
+import lootSound from '../../assets/sounds/lootSound.mp3';
+
+const loot = new Audio(lootSound);
+
 function ChestModal({ isOpen }) {
 
   const [isMounted, setIsMounted] = useState(false);
+  const [currentItem, setCurrentItem] = useState(0);
+  const [items, setItems] = useState([
+    {
+      id: 0,
+      name: 'Iron helmet',
+      src: ironHelmet,
+      weight: '6',
+      value: '60',
+      armor: '17',
+      description: 'The Iron Helmet is worn by the Dragonborn in all pre-release trailers and artwork for the game, making it somewhat of a signature piece of armor for the main character.'
+    },
+    {
+      id: 1,
+      name: 'Steel sword',
+      src: steelSword,
+      weight: '8',
+      value: '120',
+      damage: '31',
+      description: 'Passing by a Hold Guard with a steel sword equipped may trigger the line, "Favor a Steel Sword do ya? Good choice for slashing or stabbing."'
+    },
+  ])
+
+  const handleItemTake = (id) => {
+    loot.play();
+    let lastItemIndex = 0;
+    const newState = items.filter((item, index) => {
+      lastItemIndex = index;
+      return item.id !== id
+    });
+    setItems(newState);
+    if (lastItemIndex > 0) {
+      setCurrentItem(items[lastItemIndex - 1].id);
+    } else {
+      setCurrentItem(null)
+    }
+  }
 
   useEffect(() => {
     if (isOpen && !isMounted) {
@@ -38,14 +81,24 @@ function ChestModal({ isOpen }) {
         </div>
         <div className="right">
           <div className="background"></div>
+          <div className="items">
+            {items.map(item => <div style={item.id === currentItem ? { color: 'white' } : {}} onClick={handleItemTake.bind(this, item.id)} onMouseEnter={() => { setCurrentItem(item.id) }}>{item.name}</div>)}
+          </div>
         </div>
       </div>
+      {currentItem !== null ? <ItemInfo {...items[currentItem]} /> : null}
       <div className="status">
         <div className='info'>
           <div className="icon">Esc</div>
           <div className="text">Close</div>
         </div>
-        <div className="info">
+        <div className='info'>
+          <div className="icon">L</div>
+          <div className="text">Take</div>
+        </div>
+        <div className="character">
+          <div></div>
+          <div></div>
         </div>
       </div>
     </div>
