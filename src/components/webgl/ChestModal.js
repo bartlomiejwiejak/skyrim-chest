@@ -39,18 +39,21 @@ function ChestModal({ isOpen }) {
     let lastItemIndex = 0;
 
     const newState = items.filter((item, index) => {
-      lastItemIndex = index;
+      if (item.id === id) {
+        lastItemIndex = index;
+      }
       return item.id !== id
     });
     setWeight(prev => prev + items.find(item => item.id === id).weight)
     setItems(newState);
+
     if (newState.length === 0) {
       setCurrentItem(null);
     }
     else if (lastItemIndex > 0) {
       setCurrentItem(items[lastItemIndex - 1].id);
     } else {
-      setCurrentItem(1)
+      setCurrentItem(items[lastItemIndex + 1].id)
     }
   }
 
@@ -75,7 +78,7 @@ function ChestModal({ isOpen }) {
       }, 1000)
     }
   }, [isOpen, isMounted])
-  console.log(currentItem)
+
   return isMounted && (
     <div className='chest-modal'>
       <div className="overlay"></div>
