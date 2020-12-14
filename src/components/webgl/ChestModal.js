@@ -12,23 +12,24 @@ function ChestModal({ isOpen }) {
 
   const [isMounted, setIsMounted] = useState(false);
   const [currentItem, setCurrentItem] = useState(0);
+  const [weight, setWeight] = useState(122);
   const [items, setItems] = useState([
     {
       id: 0,
       name: 'Iron helmet',
       src: ironHelmet,
-      weight: '6',
-      value: '60',
-      armor: '17',
+      weight: 6,
+      value: 60,
+      armor: 17,
       description: 'The Iron Helmet is worn by the Dragonborn in all pre-release trailers and artwork for the game, making it somewhat of a signature piece of armor for the main character.'
     },
     {
       id: 1,
       name: 'Steel sword',
       src: steelSword,
-      weight: '8',
-      value: '120',
-      damage: '31',
+      weight: 8,
+      value: 120,
+      damage: 31,
       description: 'Passing by a Hold Guard with a steel sword equipped may trigger the line, "Favor a Steel Sword do ya? Good choice for slashing or stabbing."'
     },
   ])
@@ -36,15 +37,20 @@ function ChestModal({ isOpen }) {
   const handleItemTake = (id) => {
     loot.play();
     let lastItemIndex = 0;
+
     const newState = items.filter((item, index) => {
       lastItemIndex = index;
       return item.id !== id
     });
+    setWeight(prev => prev + items.find(item => item.id === id).weight)
     setItems(newState);
-    if (lastItemIndex > 0) {
+    if (newState.length === 0) {
+      setCurrentItem(null);
+    }
+    else if (lastItemIndex > 0) {
       setCurrentItem(items[lastItemIndex - 1].id);
     } else {
-      setCurrentItem(null)
+      setCurrentItem(1)
     }
   }
 
@@ -69,7 +75,7 @@ function ChestModal({ isOpen }) {
       }, 1000)
     }
   }, [isOpen, isMounted])
-
+  console.log(currentItem)
   return isMounted && (
     <div className='chest-modal'>
       <div className="overlay"></div>
@@ -82,11 +88,11 @@ function ChestModal({ isOpen }) {
         <div className="right">
           <div className="background"></div>
           <div className="items">
-            {items.map(item => <div style={item.id === currentItem ? { color: 'white' } : {}} onClick={handleItemTake.bind(this, item.id)} onMouseEnter={() => { setCurrentItem(item.id) }}>{item.name}</div>)}
+            {items.map(item => <div key={item.id} style={item.id === currentItem ? { color: 'white' } : {}} onClick={handleItemTake.bind(this, item.id)} onMouseEnter={() => { setCurrentItem(item.id) }}>{item.name}</div>)}
           </div>
         </div>
       </div>
-      {currentItem !== null ? <ItemInfo {...items[currentItem]} /> : null}
+      {currentItem !== null ? <ItemInfo {...items.find(item => item.id === currentItem)} /> : null}
       <div className="status">
         <div className='info'>
           <div className="icon">Esc</div>
@@ -97,8 +103,22 @@ function ChestModal({ isOpen }) {
           <div className="text">Take</div>
         </div>
         <div className="character">
-          <div></div>
-          <div></div>
+          <div>
+            <div>
+              Carry Weight
+          </div>
+            <div>
+              {weight}/320
+            </div>
+          </div>
+          <div>
+            <div>
+              Gold
+          </div>
+            <div>
+              1230
+          </div>
+          </div>
         </div>
       </div>
     </div>
