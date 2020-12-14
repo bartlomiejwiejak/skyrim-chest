@@ -2,10 +2,12 @@ import { useEffect } from 'react'
 import { useThree } from 'react-three-fiber';
 import gsap from 'gsap';
 
-function UseCameraMove() {
+function UseCameraMove({ state }) {
   const { camera } = useThree()
 
   useEffect(() => {
+    if (state.isOpen) return;
+
     const cameraEndValues = {
       x: 4.846472276597361,
       y: -2.210294971791372,
@@ -29,7 +31,7 @@ function UseCameraMove() {
     return () => {
       window.removeEventListener('mousemove', handleMovingCameraViaMouse)
     }
-  }, [camera])
+  }, [camera, state.isOpen])
   return null;
 }
 

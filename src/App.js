@@ -1,11 +1,13 @@
 import Scene from './components/webgl';
 
+import ContextProvider from './context/Provider';
+
 function App() {
 
   return (
-    <div className="App">
+    <ContextProvider>
       <Scene />
-    </div>
+    </ContextProvider>
   );
 }
 

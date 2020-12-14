@@ -1,21 +1,79 @@
 .chest-modal {
-  position: absolute;
+  position: fixed;
   left: 0;
-  right: 60%;
+  right: 0;
   top: 0;
   bottom: 0;
-  display: flex;
-  justify-content: space-around;
-  height: 100vh;
-  .right {
-    width: 50%;
+  z-index: 2;
+  opacity: 0;
+  color: white;
+  .overlay {
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    right: 0;
     background-color: black;
-    opacity: 0.9;
-    border-left: 1px solid white;
+    opacity: 0.6;
+  }
+  .content {
+    display: flex;
+    justify-content: space-around;
+    width: 40%;
+    height: 100%;
+  }
+  .left, .right {
+    width: 50%;
+    border-left: 2px solid white;
+    border-right: 2px solid white;
+    position: relative;
+    padding: 20px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    h1, div {
+      position: relative;
+      font-weight: bold;
+    }
+    h1 {
+      padding-bottom: 50px;
+      font-size: 30px;
+      border-bottom: 2px solid #ccc;
+    }
+    div {
+      color: #ccc;
+      font-size: 22px;
+    }
+    .background {
+      opacity: 0.8;
+      position: absolute;
+      left: 0;
+      top: 0;
+      right: 0;
+      bottom: 0;
+    }
   }
   .left {
     width: 40%;
-    background-color: grey;
-    opacity: 0.9;
+    .background {
+      background-color: grey;
+    }
+  }
+  .right {
+    width: 50%;
+    .background {
+      background-color: black;
+    }
+  }
+  .status {
+    position: absolute;
+    top: 90%;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: black;
+    border-top: 2px solid white;
+    opacity: 0.8;
   }
 }
