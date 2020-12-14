@@ -1,0 +1,25 @@
+{
+  "files": {
+    "main.css": "/skyrim-chest/static/css/main.28522166.chunk.css",
+    "main.js": "/skyrim-chest/static/js/main.cb604e14.chunk.js",
+    "main.js.map": "/skyrim-chest/static/js/main.cb604e14.chunk.js.map",
+    "runtime-main.js": "/skyrim-chest/static/js/runtime-main.708524c0.js",
+    "runtime-main.js.map": "/skyrim-chest/static/js/runtime-main.708524c0.js.map",
+    "static/js/2.b56e4932.chunk.js": "/skyrim-chest/static/js/2.b56e4932.chunk.js",
+    "static/js/2.b56e4932.chunk.js.map": "/skyrim-chest/static/js/2.b56e4932.chunk.js.map",
+    "index.html": "/skyrim-chest/index.html",
+    "static/css/main.28522166.chunk.css.map": "/skyrim-chest/static/css/main.28522166.chunk.css.map",
+    "static/js/2.b56e4932.chunk.js.LICENSE.txt": "/skyrim-chest/static/js/2.b56e4932.chunk.js.LICENSE.txt",
+    "static/media/Iron_Helmet.b2e7e14a.png": "/skyrim-chest/static/media/Iron_Helmet.b2e7e14a.png",
+    "static/media/close-chest.87addd51.mp3": "/skyrim-chest/static/media/close-chest.87addd51.mp3",
+    "static/media/lootSound.018afc75.mp3": "/skyrim-chest/static/media/lootSound.018afc75.mp3",
+    "static/media/open-chest.f147bf15.mp3": "/skyrim-chest/static/media/open-chest.f147bf15.mp3",
+    "static/media/steel-sword.34e2b53e.png": "/skyrim-chest/static/media/steel-sword.34e2b53e.png"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.708524c0.js",
+    "static/js/2.b56e4932.chunk.js",
+    "static/css/main.28522166.chunk.css",
+    "static/js/main.cb604e14.chunk.js"
+  ]
+}
