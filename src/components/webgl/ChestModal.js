@@ -119,6 +119,12 @@ function ChestModal({ isOpen }) {
               1230
           </div>
           </div>
+          <div className="health">
+            <div className="edge left"></div>
+            <div className="edge edge--white left"></div>
+            <div className="edge edge--white right"></div>
+            <div className="edge right"></div>
+          </div>
         </div>
       </div>
     </div>
