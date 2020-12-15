@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/skyrim-chest/static/css/main.28522166.chunk.css",
-    "main.js": "/skyrim-chest/static/js/main.cb604e14.chunk.js",
-    "main.js.map": "/skyrim-chest/static/js/main.cb604e14.chunk.js.map",
+    "main.js": "/skyrim-chest/static/js/main.9c1feb9c.chunk.js",
+    "main.js.map": "/skyrim-chest/static/js/main.9c1feb9c.chunk.js.map",
     "runtime-main.js": "/skyrim-chest/static/js/runtime-main.708524c0.js",
     "runtime-main.js.map": "/skyrim-chest/static/js/runtime-main.708524c0.js.map",
     "static/js/2.b56e4932.chunk.js": "/skyrim-chest/static/js/2.b56e4932.chunk.js",
@@ -20,6 +20,6 @@
     "static/js/runtime-main.708524c0.js",
     "static/js/2.b56e4932.chunk.js",
     "static/css/main.28522166.chunk.css",
-    "static/js/main.cb604e14.chunk.js"
+    "static/js/main.9c1feb9c.chunk.js"
   ]
 }
