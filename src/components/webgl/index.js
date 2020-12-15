@@ -1,4 +1,4 @@
-import React, { Suspense, useState, useRef, useContext } from 'react'
+import React, { Suspense, useState, useContext } from 'react'
 import { Canvas } from 'react-three-fiber';
 
 import Chest from './Chest';
@@ -12,14 +12,12 @@ import { ChestContext } from '../../context/Provider';
 function Scene() {
 
   const [isLoaded, setIsLoaded] = useState(false);
-  const DOMContentRef = useRef(null);
   const context = useContext(ChestContext)
 
   return (
     <>
       <ChestModal isOpen={context.state.isOpen} />
       {!isLoaded && <Loader setIsLoaded={setIsLoaded} />}
-      {<div ref={DOMContentRef} className='DOMContent'></div>}
       <Canvas style={{ height: '100vh', position: 'fixed', left: 0, top: 0, bottom: 0, right: 0 }}
         camera={{ fov: 70, position: [6.909380897545731, -3.6499999999999986, -6.866536077189617] }
         }

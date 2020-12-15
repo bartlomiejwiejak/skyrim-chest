@@ -11,7 +11,7 @@ const openSound = new Audio(open);
 
 function Chest({ context }) {
 
-  const gltf = useGLTF('/chest/scene.gltf', true);
+  const gltf = useGLTF('/skyrim-chest/chest/scene.gltf', true);
   const mixer = useRef(new THREE.AnimationMixer(gltf.scene));
   const action = useRef(null);
   const isAnimating = useRef(false);
